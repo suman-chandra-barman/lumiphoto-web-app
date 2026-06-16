@@ -1,26 +1,80 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* --- Base Layout Tokens --- */
+    --background: 0 0% 100%;       /* Pure White (#FFFFFF) - ফটোগ্রাফি আর্টের ব্যাকগ্রাউন্ড */
+    --foreground: 0 0% 10%;        /* Off-Black (#1A1A1A) - মূল টেক্সট ও টাইপোগ্রাফি */
+
+    /* --- Shadcn Component Tokens --- */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    /* --- Brand Colors (Minimalist Monochrome Palette) --- */
+    --primary: 0 0% 9%;            /* Deep Jet Black (#171717) - মেইন বাটন এবং ডার্ক এক্সেন্ট */
+    --primary-foreground: 0 0% 98%; /* Light Cream/White text on primary buttons */
+
+    --secondary: 0 0% 96.1%;       /* Soft Cool Light Gray (#F5F5F5) - প্রোডাক্ট কার্ড ব্যাকগ্রাউন্ড */
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;           /* Subdued elements or filters */
+    --muted-foreground: 0 0% 45.1%; /* Dimmed/Gray text for subtitles or dates */
+
+    --accent: 0 0% 96.1%;          /* Hover states background */
+    --accent-foreground: 0 0% 9%;
+
+    /* --- System Feedback Tokens --- */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* --- Utility / Form Tokens --- */
+    --border: 0 0% 89.8%;          /* Thin Elegant Borders (#E5E5E5) */
+    --input: 0 0% 89.8%;           /* Form Field Borders */
+    --ring: 0 0% 9%;               /* Focus Ring Outline */
+
+    /* --- Shape Tokens --- */
+    --radius: 0.375rem;            /* 6px/8px Rounded Corners for minimal clean aesthetic */
+  }
+
+  .dark {
+    /* --- Dark Mode Configuration (Photography Focus) --- */
+    --background: 0 0% 3.9%;       /* Ultra Dark Slate (#0A0A0A) */
+    --foreground: 0 0% 98%;        /* Near White text */
+    
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 0 0% 98%;           /* Inverted Primary (White buttons) */
+    --primary-foreground: 0 0% 9%;
+    
+    --secondary: 0 0% 14.9%;       /* Dark gray for secondary panels */
+    --secondary-foreground: 0 0% 98%;
+    
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 0 0% 14.9%;          /* Subdued dark borders */
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-neutral-200 selection:text-neutral-900;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
 }
