@@ -54,7 +54,11 @@ const LANGUAGES = [
 
 type Locale = (typeof LANGUAGES)[number]['code'];
 
-const NAV_ITEMS = ['successStories', 'pricing', 'support'] as const;
+const NAV_ITEMS = [
+  { key: 'successStories', href: '/success-stories' },
+  { key: 'pricing', href: '/pricing' },
+  { key: 'support', href: '/support' }
+] as const;
 
 const ADVANTAGES_DROPDOWN = [
   { href: '/all-features', labelKey: 'advantages_allFeatures_title', descKey: 'advantages_allFeatures_desc' },
@@ -130,13 +134,13 @@ export default function Navbar({ locale }: NavbarProps) {
                 </NavigationMenuItem>
 
                 {NAV_ITEMS.map(item => (
-                  <NavigationMenuItem key={item} value={item}>
+                  <NavigationMenuItem key={item.key} value={item.key}>
                     <NavigationMenuLink
-                      render={<Link href={`/${item}`} />}
+                      render={<Link href={item.href} />}
                       closeOnClick
                       className="text-[14px] font-medium text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md hover:bg-gray-100 transition-colors cursor-pointer"
                     >
-                      {t(item)}
+                      {t(item.key)}
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                 ))}
@@ -273,12 +277,12 @@ export default function Navbar({ locale }: NavbarProps) {
           </Link>
           {NAV_ITEMS.map(item => (
             <Link
-              key={item}
-              href={`#${item}`}
+              key={item.key}
+              href={`#${item.key}`}
               onClick={() => setMobileOpen(false)}
               className="block px-3 py-2.5 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md"
             >
-              {t(item)}
+              {t(item.key)}
             </Link>
           ))}
           <div className="pt-3 border-t border-gray-100 space-y-2 mt-2">
