@@ -54,13 +54,13 @@ export default function SchoolHero({ locale }: SchoolHeroProps) {
       </div>
 
       {/* Smiling kid portrait */}
-      <div className="relative mt-16 max-w-2xl w-full px-4 sm:px-6">
-        <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-neutral-800 aspect-[4/3] sm:aspect-[4/3] w-full bg-neutral-100 dark:bg-neutral-900">
+      <div className="relative mt-16 max-w-3xl w-full px-4 sm:px-6">
+        <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square w-full bg-neutral-100 dark:bg-neutral-900">
           <Image
             src="/child.jpg"
             alt="School Child Portrait"
             fill
-            sizes="(max-width: 768px) 100vw, 672px"
+            sizes="(max-width: 768px) 100vw, 768px"
             priority
             className="object-cover"
           />
