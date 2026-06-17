@@ -21,6 +21,7 @@ export default function PricingPlans({ locale }: PricingPlansProps) {
       description: t('starterDesc'),
       priceMonthly: 49,
       priceAnnual: 39,
+      priceAnnualTotal: 470,
       buttonText: t('startFreeTrial'),
       buttonVariant: 'outline' as const,
       features: [
@@ -43,6 +44,7 @@ export default function PricingPlans({ locale }: PricingPlansProps) {
       description: t('proDesc'),
       priceMonthly: 149,
       priceAnnual: 119,
+      priceAnnualTotal: 1430,
       buttonText: t('startFreeTrial'),
       buttonVariant: 'brand' as const,
       popular: true,
@@ -68,6 +70,7 @@ export default function PricingPlans({ locale }: PricingPlansProps) {
       description: t('studioDesc'),
       priceMonthly: 349,
       priceAnnual: 279,
+      priceAnnualTotal: 3350,
       buttonText: t('contactSales'),
       buttonVariant: 'outline' as const,
       features: [
@@ -156,6 +159,16 @@ export default function PricingPlans({ locale }: PricingPlansProps) {
                   <span className="text-gray-500 dark:text-neutral-400 text-sm ml-1">
                     /{t('monthly').toLowerCase()}
                   </span>
+                </div>
+
+                <div className="min-h-[20px] mt-1.5">
+                  {billingInterval === 'annual' ? (
+                    <p className="text-[13px] text-gray-400 dark:text-neutral-500 font-normal">
+                      {t('billedAnnually', { amount: `€${plan.priceAnnualTotal}` })}
+                    </p>
+                  ) : (
+                    <div className="h-4" />
+                  )}
                 </div>
 
                 <div className="mt-8">

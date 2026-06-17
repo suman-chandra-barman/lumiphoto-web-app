@@ -193,6 +193,7 @@
     "monthly": "Mensuel",
     "annual": "Annuel",
     "save20": "Économisez 20%",
+    "billedAnnually": "Facturé annuellement ({amount})",
     "starterTitle": "Starter",
     "starterDesc": "Idéal pour les photographes indépendants qui débutent",
     "proTitle": "Pro",

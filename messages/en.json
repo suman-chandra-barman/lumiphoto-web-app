@@ -193,6 +193,7 @@
     "monthly": "Monthly",
     "annual": "Annual",
     "save20": "Save 20%",
+    "billedAnnually": "Billed annually ({amount})",
     "starterTitle": "Starter",
     "starterDesc": "Perfect for individual photographers starting out",
     "proTitle": "Pro",
