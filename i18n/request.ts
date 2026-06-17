@@ -2,7 +2,7 @@ import { getRequestConfig } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
 const routing = {
-  locales: ['en', 'ge'],
+  locales: ['en', 'fr', 'de'],
   defaultLocale: 'en'
 };
 
