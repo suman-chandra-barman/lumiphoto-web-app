@@ -43,7 +43,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="bg-[#f0f4fa] py-20 lg:py-28">
+    <section id="features" className="bg-[#f0f4fa] py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Header */}

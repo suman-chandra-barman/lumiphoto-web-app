@@ -7,7 +7,7 @@ export default function Revenue() {
   const t = useTranslations('Revenue');
 
   return (
-    <section className="bg-[#f0f4fa] py-20 lg:py-24 border-t border-gray-200">
+    <section id="pricing" className="bg-[#f0f4fa] py-20 lg:py-24 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Header */}

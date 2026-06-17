@@ -5,7 +5,19 @@
     "pricing": "Tarification",
     "support": "Support",
     "photographerLogin": "Connexion Photographe",
-    "startFreeTrial": "Essai gratuit"
+    "startFreeTrial": "Essai gratuit",
+    "advantages_allFeatures_title": "Toutes les fonctionnalités",
+    "advantages_allFeatures_desc": "Aperçu complet des capacités de la plateforme",
+    "advantages_schoolPhotography_title": "Photographie scolaire",
+    "advantages_schoolPhotography_desc": "Automatisation du flux de travail basée sur QR",
+    "advantages_secureGalleries_title": "Galeries sécurisées",
+    "advantages_secureGalleries_desc": "Galeries privées conformes au RGPD",
+    "advantages_aiSorting_title": "Tri par IA",
+    "advantages_aiSorting_desc": "Organisation automatisée des images",
+    "advantages_securePayments_title": "Paiements sécurisés",
+    "advantages_securePayments_desc": "Plateforme e-commerce intégrée",
+    "advantages_revenueAnalytics_title": "Analyse des revenus",
+    "advantages_revenueAnalytics_desc": "Suivi des gains et des performances"
   },
   "Hero": {
     "badge": "PLATEFORME DE PHOTOGRAPHIE D'ENTREPRISE",

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export default function Security() {
   const t = useTranslations('Security');
@@ -12,16 +13,18 @@ export default function Security() {
   ];
 
   return (
-    <section id="pricing" className="bg-[#f7f9fc] py-20 lg:py-28">
+    <section id="security" className="bg-[#f7f9fc] py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* ── Left: Photo (no frame, just rounded) ── */}
           <div className="flex justify-center lg:justify-start order-last lg:order-first">
-            <div className="w-full max-w-[360px] aspect-[3/4] rounded-2xl overflow-hidden bg-gray-100">
-              <img
+            <div className="w-full max-w-[360px] aspect-[3/4] rounded-2xl overflow-hidden bg-gray-100 relative">
+              <Image
                 src="/security.png"
                 alt="Professional Photographer"
+                width={360}
+                height={480}
                 className="w-full h-full object-cover object-center"
               />
             </div>

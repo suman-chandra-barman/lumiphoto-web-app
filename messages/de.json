@@ -5,7 +5,19 @@
     "pricing": "Preise",
     "support": "Hilfe & Support",
     "photographerLogin": "Fotografen-Login",
-    "startFreeTrial": "Kostenlos testen"
+    "startFreeTrial": "Kostenlos testen",
+    "advantages_allFeatures_title": "Alle Funktionen",
+    "advantages_allFeatures_desc": "Vollständige Übersicht der Plattformfunktionen",
+    "advantages_schoolPhotography_title": "Schulfotografie",
+    "advantages_schoolPhotography_desc": "QR-basierte Workflow-Automatisierung",
+    "advantages_secureGalleries_title": "Sichere Galerien",
+    "advantages_secureGalleries_desc": "DSGVO-konforme private Galerien",
+    "advantages_aiSorting_title": "KI-Sortierung",
+    "advantages_aiSorting_desc": "Automatische Bildorganisation",
+    "advantages_securePayments_title": "Sichere Zahlungen",
+    "advantages_securePayments_desc": "Integrierte E-Commerce-Plattform",
+    "advantages_revenueAnalytics_title": "Umsatzanalyse",
+    "advantages_revenueAnalytics_desc": "Einnahmen und Leistung verfolgen"
   },
   "Hero": {
     "badge": "UNTERNEHMENS-FOTOGRAFIE-PLATTFORM",

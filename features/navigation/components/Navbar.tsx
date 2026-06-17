@@ -5,6 +5,14 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { NavCTAButton } from '@/components/common/NavCTAButton';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu';
 
 // ─── SVG Flag Components ──────────────────────────────────────────────────────
 const FlagUK = () => (
@@ -49,10 +57,12 @@ type Locale = (typeof LANGUAGES)[number]['code'];
 const NAV_ITEMS = ['successStories', 'pricing', 'support'] as const;
 
 const ADVANTAGES_DROPDOWN = [
-  { href: '#ai', label: 'AI Sorting' },
-  { href: '#qr', label: 'QR Automation' },
-  { href: '#gdpr', label: 'GDPR Compliance' },
-  { href: '#print', label: 'Print Fulfillment' },
+  { href: '/all-features', labelKey: 'advantages_allFeatures_title', descKey: 'advantages_allFeatures_desc' },
+  { href: '/school-photography', labelKey: 'advantages_schoolPhotography_title', descKey: 'advantages_schoolPhotography_desc' },
+  { href: '/secure-galleries', labelKey: 'advantages_secureGalleries_title', descKey: 'advantages_secureGalleries_desc' },
+  { href: '/ai-sorting', labelKey: 'advantages_aiSorting_title', descKey: 'advantages_aiSorting_desc' },
+  { href: '/secure-payments', labelKey: 'advantages_securePayments_title', descKey: 'advantages_securePayments_desc' },
+  { href: '/revenue-analytics', labelKey: 'advantages_revenueAnalytics_title', descKey: 'advantages_revenueAnalytics_desc' },
 ] as const;
 
 // ─── Props ────────────────────────────────────────────────────────────────────
@@ -68,7 +78,6 @@ export default function Navbar({ locale }: NavbarProps) {
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const [advantagesOpen, setAdvantagesOpen] = useState(false);
 
   const currentLang = LANGUAGES.find(l => l.code === locale) ?? LANGUAGES[0];
 
@@ -82,7 +91,7 @@ export default function Navbar({ locale }: NavbarProps) {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
+    <header className="sticky top-0 z-50 w-full bg-white shadow-xs">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-[68px]">
 
@@ -94,56 +103,45 @@ export default function Navbar({ locale }: NavbarProps) {
           </Link>
 
           {/* ── Desktop Centre Nav ── */}
-          <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center" aria-label="Main navigation">
+            <NavigationMenu>
+              <NavigationMenuList className="flex items-center gap-1">
+                <NavigationMenuItem value="advantages">
+                  <NavigationMenuTrigger className="flex items-center text-[14px] font-medium text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md hover:bg-gray-100 transition-colors cursor-pointer data-[popup-open]:bg-gray-100">
+                    {t('advantages')}
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="p-2 w-[340px] flex flex-col gap-1 bg-white rounded-xl shadow-xl border border-gray-100">
+                    {ADVANTAGES_DROPDOWN.map(({ href, labelKey, descKey }) => (
+                      <NavigationMenuLink
+                        key={labelKey}
+                        render={<Link href={href} />}
+                        closeOnClick
+                        className="group flex flex-col items-start text-left select-none rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-blue-50/60 cursor-pointer focus:bg-blue-50/60"
+                      >
+                        <div className="text-[14px] font-bold text-gray-900 group-hover:text-brand transition-colors duration-150">
+                          {t(labelKey)}
+                        </div>
+                        <p className="text-[12px] text-gray-500 mt-1 font-normal leading-normal">
+                          {t(descKey)}
+                        </p>
+                      </NavigationMenuLink>
+                    ))}
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
 
-            {/* Advantages with dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setAdvantagesOpen(true)}
-              onMouseLeave={() => setAdvantagesOpen(false)}
-            >
-              <button
-                type="button"
-                aria-haspopup="true"
-                aria-expanded={advantagesOpen}
-                onClick={() => setAdvantagesOpen(v => !v)}
-                className="flex items-center gap-1.5 text-[14px] font-medium text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md hover:bg-gray-100 transition-colors cursor-pointer"
-              >
-                {t('advantages')}
-                <svg
-                  className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${advantagesOpen ? 'rotate-180' : ''}`}
-                  fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-
-              {advantagesOpen && (
-                <div role="menu" className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-lg border border-gray-100 py-1 z-50">
-                  {ADVANTAGES_DROPDOWN.map(({ href, label }) => (
-                    <Link
-                      key={href}
-                      href={href}
-                      role="menuitem"
-                      onClick={() => setAdvantagesOpen(false)}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                {NAV_ITEMS.map(item => (
+                  <NavigationMenuItem key={item} value={item}>
+                    <NavigationMenuLink
+                      render={<Link href={`/${item}`} />}
+                      closeOnClick
+                      className="text-[14px] font-medium text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md hover:bg-gray-100 transition-colors cursor-pointer"
                     >
-                      {label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {NAV_ITEMS.map(item => (
-              <Link
-                key={item}
-                href={`#${item}`}
-                className="text-[14px] font-medium text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md hover:bg-gray-100 transition-colors"
-              >
-                {t(item)}
-              </Link>
-            ))}
+                      {t(item)}
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
           </nav>
 
           {/* ── Desktop Right Actions ── */}
@@ -203,7 +201,7 @@ export default function Navbar({ locale }: NavbarProps) {
             </div>
 
             {/* CTA — gradient shadcn button via NavCTAButton */}
-            <NavCTAButton href={`/${locale}#trial`} variant="gradient">
+            <NavCTAButton href={`/${locale}/trial`} variant="gradient">
               {t('startFreeTrial')}
             </NavCTAButton>
           </div>

@@ -8,7 +8,7 @@ export default function CTA() {
   const t = useTranslations('CTA');
 
   return (
-    <section className="bg-brand-gradient py-16 lg:py-20">
+    <section id="trial" className="bg-brand-gradient py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center space-y-6">
 
         <h2 className="text-[28px] sm:text-[34px] lg:text-[40px] font-extrabold text-white tracking-tight leading-[1.15] max-w-3xl mx-auto">
