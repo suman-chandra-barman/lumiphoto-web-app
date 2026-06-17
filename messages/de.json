@@ -308,5 +308,20 @@
     "minimal": "Minimal",
     "hours": "Stunden",
     "revGainText": "+77% Umsatzsteigerung = €2.700 mehr pro Event"
+  },
+  "Support": {
+    "badge": "Kontaktieren Sie uns",
+    "title": "Wir sind für Sie da",
+    "subtitle": "Haben Sie Fragen zu Lumiphoto? Unser Team ist bereit, Ihnen zu helfen.",
+    "emailTitle": "E-Mail an uns",
+    "emailDesc": "Antwort innerhalb von 24 Stunden",
+    "emailValue": "hello@lumiphoto.com",
+    "callTitle": "Rufen Sie uns an",
+    "callDesc": "Montag - Freitag, 9:00 - 18:00 Uhr CET",
+    "callValue": "+49 30 123 456 789",
+    "visitTitle": "Besuchen Sie uns",
+    "visitDesc1": "Lumiphoto GmbH",
+    "visitDesc2": "Friedrichstraße 123",
+    "visitDesc3": "10117 Berlin, Deutschland"
   }
 }
