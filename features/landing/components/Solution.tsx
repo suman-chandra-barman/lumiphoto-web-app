@@ -73,7 +73,7 @@ export default function Solution() {
             {/* Learn More Button */}
             <Link
               href="#details"
-              className="inline-flex items-center gap-2 bg-brand-gradient hover:opacity-95 hover:shadow-md active:scale-[0.98] text-white text-[14px] font-semibold px-6 py-3 rounded-lg transition-all duration-200"
+              className="inline-flex items-center gap-2 bg-brand-gradient hover:opacity-90 text-white text-[14px] font-semibold px-6 py-3 rounded-lg transition-all duration-200"
             >
               {t('learnMore')}
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

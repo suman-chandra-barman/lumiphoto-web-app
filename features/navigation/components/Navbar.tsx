@@ -290,7 +290,7 @@ export default function Navbar({ locale }: NavbarProps) {
               {t('photographerLogin')}
             </Link>
             <NavCTAButton
-              href={`/${locale}#trial`}
+              href={`/${locale}/trial`}
               variant="gradient"
               className="w-full justify-center"
               onClick={() => setMobileOpen(false)}
