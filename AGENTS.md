@@ -11,6 +11,8 @@ We organize code by business/UI features inside the `features/` directory rather
 - Path structure: `features/<feature-name>/components/` or `features/<feature-name>/hooks/`
 - Navigation feature: `features/navigation/` (contains Navbar, Footer)
 - Landing page features: `features/landing/` (contains Hero, Stats, PainPoints, Steps, Solution, Security)
+- Success Stories feature: `features/success-stories/` (contains CaseStudiesList, StatsSummaryBanner, SuccessStoriesCTA, SuccessStoriesPage)
+- Secure Galleries feature: `features/secure-galleries/` (contains SecureHero, SecurityFeaturesGrid, GDPRComplianceDetails, SignedUrlExplanation, Certifications, AntiTheftMeasures, SecureCTA, SecureGalleriesPage)
 - Share global components inside `components/common/` only if they are reused across multiple feature modules.
 
 ### 2. Localization (i18n) Setup
