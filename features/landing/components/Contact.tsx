@@ -151,9 +151,9 @@ export default function Contact() {
 
           {/* ── Right: Photographer Image ── */}
           <div className="hidden lg:block lg:col-span-6 xl:col-span-7 relative min-h-[500px] xl:min-h-[600px]">
-            <div className="absolute inset-0 top-[-80px] left-[-40px] lg:left-[-80px] xl:left-[-120px] pointer-events-none">
+            <div>
               <Image
-                src="/security.png"
+                src="/contact.jpg"
                 alt="Support team"
                 fill
                 className="object-contain object-bottom w-full"
