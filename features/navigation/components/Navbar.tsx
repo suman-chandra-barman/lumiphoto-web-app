@@ -152,7 +152,7 @@ export default function Navbar({ locale }: NavbarProps) {
           <div className="hidden lg:flex items-center gap-3">
 
             <Link
-              href={`/${locale}/login`}
+              href={`/${locale}/signin`}
               className="text-[14px] font-medium text-gray-700 hover:text-gray-900 px-3 py-2 transition-colors whitespace-nowrap"
             >
               {t('photographerLogin')}
