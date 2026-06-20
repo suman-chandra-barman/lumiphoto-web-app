@@ -56,8 +56,7 @@ type Locale = (typeof LANGUAGES)[number]['code'];
 
 const NAV_ITEMS = [
   { key: 'successStories', href: '/success-stories' },
-  { key: 'pricing', href: '/pricing' },
-  { key: 'support', href: '/support' }
+  { key: 'pricing', href: '/pricing' }
 ] as const;
 
 const ADVANTAGES_DROPDOWN = [
