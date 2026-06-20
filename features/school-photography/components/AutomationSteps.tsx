@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useTranslations } from 'next-intl';
-import { Check, QrCode, Image as ImageIcon, UploadCloud, Send } from 'lucide-react';
+import { Check, QrCode, Image as ImageIcon, Upload, Send } from 'lucide-react';
 
 interface AutomationStepsProps {
   locale: string;
@@ -33,7 +33,7 @@ export default function AutomationSteps({ locale }: AutomationStepsProps) {
       title: t('step3Title'),
       description: t('step3Desc'),
       bullets: [t('step3Bullet1'), t('step3Bullet2'), t('step3Bullet3')],
-      Icon: UploadCloud,
+      Icon: Upload,
       align: 'left',
     },
     {
@@ -70,21 +70,22 @@ export default function AutomationSteps({ locale }: AutomationStepsProps) {
               {/* Graphic Card (displays on left for steps 2 & 4 in desktop layout) */}
               <div className={`order-2 ${isLeft ? 'md:order-2' : 'md:order-1'}`}>
                 <div className="bg-white dark:bg-neutral-900/60 rounded-3xl border border-gray-100 dark:border-neutral-800/80 p-12 md:p-16 flex items-center justify-center shadow-xs aspect-[1.8] sm:aspect-[2.2] md:aspect-[1.6]">
-                  <step.Icon className="w-20 h-20 text-brand stroke-[1.25]" />
+                  <step.Icon className="w-20 h-20 text-brand stroke-[1.5]" />
                 </div>
               </div>
 
               {/* Text Description (displays on right for steps 2 & 4 in desktop layout) */}
               <div className={`order-1 ${isLeft ? 'md:order-1' : 'md:order-2'} space-y-6`}>
                 
-                {/* Step badge indicator */}
-                <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-brand text-white font-bold text-sm shadow-md shadow-brand/10">
-                  {step.number}
+                {/* Step badge & title inline */}
+                <div className="flex items-center gap-4">
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-brand text-white font-extrabold text-lg shadow-md shadow-brand/10 shrink-0">
+                    {step.number}
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+                    {step.title}
+                  </h3>
                 </div>
-
-                <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">
-                  {step.title}
-                </h3>
 
                 <p className="text-sm text-gray-500 dark:text-neutral-400 font-normal leading-relaxed">
                   {step.description}
@@ -93,11 +94,11 @@ export default function AutomationSteps({ locale }: AutomationStepsProps) {
                 {/* Bullet Points */}
                 <ul className="space-y-3.5 pt-2">
                   {step.bullets.map((bullet, idx) => (
-                    <li key={idx} className="flex items-center gap-3 text-sm">
-                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-50 dark:bg-blue-950/40 flex items-center justify-center text-brand dark:text-blue-400">
-                        <Check className="w-3.5 h-3.5 stroke-[3]" />
+                    <li key={idx} className="flex items-start gap-3 text-sm">
+                      <div className="flex-shrink-0 w-5 h-5 rounded-full border border-gray-400 dark:border-neutral-600 flex items-center justify-center text-gray-700 dark:text-neutral-300 mt-0.5">
+                        <Check className="w-3 h-3 stroke-[2.5]" />
                       </div>
-                      <span className="text-gray-700 dark:text-neutral-300 font-medium leading-normal">
+                      <span className="text-gray-700 dark:text-neutral-300 font-normal leading-relaxed">
                         {bullet}
                       </span>
                     </li>
